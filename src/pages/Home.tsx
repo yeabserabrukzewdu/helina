@@ -15,7 +15,7 @@ export const Home = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/20 via-dark-bg/80 to-dark-bg z-10" />
           <img
-            src="https://picsum.photos/seed/tech/1920/1080"
+            src="./1.jpg"
             className="w-full h-full object-cover opacity-40"
             alt="Hero Background"
             referrerPolicy="no-referrer"
@@ -82,7 +82,7 @@ export const Home = () => {
           >
             <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
               <img
-                src="https://picsum.photos/seed/learning/800/1000"
+                src="./8.jpg"
                 className="w-full aspect-[4/5] object-cover"
                 alt="Student Learning"
                 referrerPolicy="no-referrer"

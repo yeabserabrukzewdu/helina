@@ -16,28 +16,28 @@ export const About = () => {
             animate={{ opacity: 1, x: 0 }}
           >
             <h1 className="text-5xl md:text-7xl font-display font-extrabold mb-8">
-              Empowering <br />
+              {t('about.title')} <br />
               <span className="text-gradient">{t('nav.about')}</span>
             </h1>
             <p className="text-white/60 text-lg mb-8 leading-relaxed">
-              Exceed Advanced Training Institution was founded with a single mission: to bridge the gap between traditional education and the rapidly evolving tech industry in Ethiopia.
+              {t('about.desc1')}
             </p>
             <p className="text-white/60 text-lg mb-10 leading-relaxed">
-              We provide hands-on, project-based learning that focuses on the skills employers actually need. Our instructors are industry veterans who bring real-world experience into the classroom.
+              {t('about.desc2')}
             </p>
             
             <div className="grid grid-cols-3 gap-8">
               <div>
                 <div className="text-4xl font-bold text-brand-primary mb-1">2k+</div>
-                <div className="text-xs uppercase tracking-widest text-white/40 font-bold">Graduates</div>
+                <div className="text-xs uppercase tracking-widest text-white/40 font-bold">{t('about.stats.graduates')}</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-brand-secondary mb-1">15+</div>
-                <div className="text-xs uppercase tracking-widest text-white/40 font-bold">Expert Tutors</div>
+                <div className="text-xs uppercase tracking-widest text-white/40 font-bold">{t('about.stats.tutors')}</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-brand-accent mb-1">95%</div>
-                <div className="text-xs uppercase tracking-widest text-white/40 font-bold">Success Rate</div>
+                <div className="text-xs uppercase tracking-widest text-white/40 font-bold">{t('about.stats.success')}</div>
               </div>
             </div>
           </motion.div>
@@ -49,7 +49,7 @@ export const About = () => {
           >
             <div className="absolute -inset-4 bg-brand-primary/20 blur-3xl rounded-full" />
             <img
-              src="./1.jpg"
+              src="./9.jpg"
               className="relative rounded-[3rem] border border-white/10 shadow-2xl"
               alt="Our Team"
               referrerPolicy="no-referrer"
@@ -61,9 +61,9 @@ export const About = () => {
         <div className="grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-1 space-y-8">
             <div>
-              <h2 className="text-3xl font-display font-bold mb-6">Get in Touch</h2>
+              <h2 className="text-3xl font-display font-bold mb-6">{t('about.contact.title')}</h2>
               <p className="text-white/60 mb-8">
-                Have questions about our programs? We're here to help you choose the right path for your career.
+                {t('about.contact.desc')}
               </p>
             </div>
             
@@ -89,28 +89,28 @@ export const About = () => {
           <div className="lg:col-span-2 glass p-8 md:p-12 rounded-[2.5rem]">
             <form className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-medium text-white/60 ml-1">Full Name</label>
-                <input type="text" className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-brand-primary outline-none transition-colors" placeholder="John Doe" />
+                <label className="text-sm font-medium text-white/60 ml-1">{t('about.contact.form.name')}</label>
+                <input type="text" className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-brand-primary outline-none transition-colors" placeholder={t('about.contact.form.placeholder.name')} />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-white/60 ml-1">Email Address</label>
-                <input type="email" className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-brand-primary outline-none transition-colors" placeholder="john@example.com" />
+                <label className="text-sm font-medium text-white/60 ml-1">{t('about.contact.form.email')}</label>
+                <input type="email" className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-brand-primary outline-none transition-colors" placeholder={t('about.contact.form.placeholder.email')} />
               </div>
               <div className="md:col-span-2 space-y-2">
-                <label className="text-sm font-medium text-white/60 ml-1">Subject</label>
+                <label className="text-sm font-medium text-white/60 ml-1">{t('about.contact.form.subject')}</label>
                 <select className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-brand-primary outline-none transition-colors appearance-none">
-                  <option className="bg-dark-bg">General Inquiry</option>
-                  <option className="bg-dark-bg">Course Registration</option>
-                  <option className="bg-dark-bg">Partnership</option>
+                  <option className="bg-dark-bg">{t('about.contact.form.options.general')}</option>
+                  <option className="bg-dark-bg">{t('about.contact.form.options.registration')}</option>
+                  <option className="bg-dark-bg">{t('about.contact.form.options.partnership')}</option>
                 </select>
               </div>
               <div className="md:col-span-2 space-y-2">
-                <label className="text-sm font-medium text-white/60 ml-1">Message</label>
-                <textarea rows={4} className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-brand-primary outline-none transition-colors resize-none" placeholder="How can we help you?"></textarea>
+                <label className="text-sm font-medium text-white/60 ml-1">{t('about.contact.form.message')}</label>
+                <textarea rows={4} className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-brand-primary outline-none transition-colors resize-none" placeholder={t('about.contact.form.placeholder.message')}></textarea>
               </div>
               <div className="md:col-span-2">
                 <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2">
-                  Send Message <Send size={18} />
+                  {t('about.contact.form.send')} <Send size={18} />
                 </button>
               </div>
             </form>
@@ -122,7 +122,7 @@ export const About = () => {
       <button className="fixed bottom-8 right-8 w-16 h-16 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-2xl shadow-brand-primary/40 hover:scale-110 transition-transform z-50 group">
         <MessageSquare size={28} />
         <span className="absolute right-full mr-4 px-4 py-2 rounded-xl bg-white text-dark-bg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">
-          Chat with our AI Tutor
+          {t('about.aiTutor')}
         </span>
         <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full border-2 border-dark-bg animate-pulse" />
       </button>

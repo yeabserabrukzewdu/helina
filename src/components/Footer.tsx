@@ -67,11 +67,11 @@ export const Footer = () => {
           <ul className="space-y-4">
             <li className="flex items-start gap-3 text-white/60">
               <MapPin size={20} className="text-brand-primary shrink-0" />
-              <span>Addis Ababa, Ethiopia<br />Bole Road, Around Friendship</span>
+              <span>Addis Ababa, Ethiopia<br />Megenagna, metebaber blg. 3rd floor</span>
             </li>
             <li className="flex items-center gap-3 text-white/60">
               <Phone size={20} className="text-brand-primary shrink-0" />
-              <span>+251 911 00 00 00</span>
+              <span>+251 912 088 143</span>
             </li>
             <li className="flex items-center gap-3 text-white/60">
               <Mail size={20} className="text-brand-primary shrink-0" />
