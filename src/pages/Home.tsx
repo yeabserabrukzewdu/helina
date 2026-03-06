@@ -15,7 +15,7 @@ export const Home = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/20 via-dark-bg/80 to-dark-bg z-10" />
           <img
-            src="./1.jpg"
+            src="https://picsum.photos/seed/tech/1920/1080"
             className="w-full h-full object-cover opacity-40"
             alt="Hero Background"
             referrerPolicy="no-referrer"
@@ -82,7 +82,7 @@ export const Home = () => {
           >
             <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
               <img
-                src="./8.jpg"
+                src="https://picsum.photos/seed/learning/800/1000"
                 className="w-full aspect-[4/5] object-cover"
                 alt="Student Learning"
                 referrerPolicy="no-referrer"
@@ -94,18 +94,18 @@ export const Home = () => {
                     <CheckCircle2 className="text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold">International Certification</h4>
-                    <p className="text-sm text-white/60">Recognized by top tech companies</p>
+                    <h4 className="font-bold">{t('home.cert.title')}</h4>
+                    <p className="text-sm text-white/60">{t('home.cert.desc')}</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/5 p-3 rounded-xl border border-white/5">
                     <div className="text-2xl font-bold text-brand-primary">95%</div>
-                    <div className="text-[10px] uppercase tracking-wider text-white/40">Hiring Rate</div>
+                    <div className="text-[10px] uppercase tracking-wider text-white/40">{t('home.stats.hiring')}</div>
                   </div>
                   <div className="bg-white/5 p-3 rounded-xl border border-white/5">
                     <div className="text-2xl font-bold text-brand-secondary">50+</div>
-                    <div className="text-[10px] uppercase tracking-wider text-white/40">Partner Companies</div>
+                    <div className="text-[10px] uppercase tracking-wider text-white/40">{t('home.stats.partners')}</div>
                   </div>
                 </div>
               </div>
@@ -159,16 +159,16 @@ export const Home = () => {
                   <div className="lg:col-span-3 p-8 flex flex-col justify-between">
                     <div>
                       <div className="flex justify-between items-start mb-4">
-                        <h3 className="text-2xl font-bold">{course.title}</h3>
+                        <h3 className="text-2xl font-bold">{t(`data.courses.${course.id}.title`)}</h3>
                         <span className="text-xs text-brand-primary font-medium px-2 py-1 bg-brand-primary/10 rounded border border-brand-primary/20">
                           {course.titleAmharic}
                         </span>
                       </div>
                       <p className="text-white/60 text-sm mb-6 line-clamp-3">
-                        {course.description}
+                        {t(`data.courses.${course.id}.desc`)}
                       </p>
                       <div className="space-y-3 mb-8">
-                        {course.features.map((feature, i) => (
+                        {(t(`data.courses.${course.id}.features`) as unknown as string[] || course.features).map((feature, i) => (
                           <div key={i} className="flex items-start gap-2 text-sm text-white/80">
                             <CheckCircle2 size={16} className="text-brand-primary shrink-0 mt-0.5" />
                             <span>{feature}</span>
@@ -201,14 +201,14 @@ export const Home = () => {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">What Our <span className="text-gradient">Students Say</span></h2>
-            <p className="text-white/60">Real stories from real people who transformed their lives at Exceed.</p>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">{t('home.testimonials.title').split(' ').slice(0, 2).join(' ')} <span className="text-gradient">{t('home.testimonials.title').split(' ').slice(2).join(' ')}</span></h2>
+            <p className="text-white/60">{t('home.testimonials.subtitle')}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {TESTIMONIALS.map((t, idx) => (
+            {TESTIMONIALS.map((testimonial, idx) => (
               <motion.div
-                key={t.id}
+                key={testimonial.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -216,14 +216,14 @@ export const Home = () => {
                 className="glass p-8 rounded-3xl relative"
               >
                 <div className="flex text-yellow-500 mb-6">
-                  {[...Array(t.rating)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
+                  {[...Array(testimonial.rating)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
-                <p className="text-white/80 italic mb-8 leading-relaxed">"{t.content}"</p>
+                <p className="text-white/80 italic mb-8 leading-relaxed">"{t(`data.testimonials.${testimonial.id}.content`)}"</p>
                 <div className="flex items-center gap-4">
-                  <img src={t.avatar} className="w-12 h-12 rounded-full border border-white/10" alt={t.name} />
+                  <img src={testimonial.avatar} className="w-12 h-12 rounded-full border border-white/10" alt={testimonial.name} />
                   <div>
-                    <h4 className="font-bold">{t.name}</h4>
-                    <p className="text-xs text-white/40">{t.role} • {t.date}</p>
+                    <h4 className="font-bold">{testimonial.name}</h4>
+                    <p className="text-xs text-white/40">{t(`data.testimonials.${testimonial.id}.role`)} • {testimonial.date}</p>
                   </div>
                 </div>
               </motion.div>
@@ -244,9 +244,9 @@ export const Home = () => {
             viewport={{ once: true }}
             className="relative z-10"
           >
-            <h2 className="text-4xl md:text-6xl font-display font-extrabold mb-8">Ready to Launch Your <br />Tech Career?</h2>
+            <h2 className="text-4xl md:text-6xl font-display font-extrabold mb-8">{t('home.cta.title')}</h2>
             <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-              Join our next cohort and get the skills you need to succeed in the digital economy.
+              {t('home.cta.desc')}
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link to="/register" className="px-10 py-5 rounded-2xl bg-white text-brand-primary font-bold text-lg hover:scale-105 transition-all shadow-xl">
